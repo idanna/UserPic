@@ -66,8 +66,7 @@ class UserController < ApplicationController
 	end
 	
 	def add_picture
-		file_type = params[:pictur][:photo].content_type
-		if (params[:pictur] != nil && file_type.match(/image/))
+		if (params[:pictur] != nil && file_type = params[:pictur][:photo].content_type.match(/image/))
 			newPic = Picture.create(params[:pictur])
 			newPic.user_id = @user.id
 			newPic.save
