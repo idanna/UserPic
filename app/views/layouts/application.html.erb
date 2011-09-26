@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UserPic</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  
+  <% if @user %>
+  	<h1 align = "center">Welcome,  <%= @user.nice_name %></h1>
+  <% else %>
+  	<h1 align = "center">Welcome, Stranger </h1>
+  <% end %>
+</head>
+<body>
+	<% if @user %>
+		<table align = "center">
+				<td>
+						<%= link_to "Log out", 
+							:controller => "user",
+							:action => "logout" %>
+							
+				</td>					
+		</table>
+	<% end %>
+	
+<%= yield %>
+
+</body>
+</html>

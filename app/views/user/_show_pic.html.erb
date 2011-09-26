@@ -1,0 +1,24 @@
+<table align = "center">
+	<% for row in @normal_lines %>
+		<tr><td>
+			<div class="row">
+					<% for col in 0..@cols-1 %>
+						<%= pic_line :index => row*@cols + col, :pic_num => @cols %>
+					<% end %>
+			</div>
+		</tr></td>
+		
+	<% end %>
+
+	<% for row in @wider_lines %>
+		<tr><td>
+			<div class="row">
+				<% for col in 0..(@cols) %>
+					<%= pic_line :index => row*@cols + col, :pic_num => @cols, :extra => true %>
+				<% end %>
+			</div>
+		</tr></td>
+		
+	<% end %>
+		
+</table>

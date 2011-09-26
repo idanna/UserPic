@@ -1,0 +1,28 @@
+<table align = "center", border = 1px, cellpadding= 10px, width = 500px >
+	<tr>
+		<td>
+			<h2>Please login: </h2>
+			<%= form_for :user, :url => {:controller => "user", :action => "login" },
+		 	:html => { :multipart => true } do |f| %>
+			<table align = "center" >		 		
+			  	<tr>
+					<td><%= f.label :email %></td>
+			  		<td><%= f.email_field :email %></td>
+			  	</tr>
+			  	
+			  	<tr>
+					<td><%= f.label :password %></td>
+			  		<td><%= f.password_field :password %></td>
+			  	</tr>
+			  	<tr>
+			  		<td colspan = "2", align = "right"><%= f.submit "Login" %></td>
+			  		
+		  		</tr>
+  				<tr>
+  					<td colspan = "2", align = "right">Or <%= link_to "Sign-Up", :controller => "user", :action => "signup" %></td>
+				</tr>
+  				<% end %>
+  			</table>
+  		</td>
+	</tr>
+</table>

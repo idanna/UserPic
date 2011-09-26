@@ -1,0 +1,12 @@
+<table align = "center">	
+	<tr>
+		<td>
+			<h3>Please upload a photo</h3>
+			<%= form_for :pictur, :url => { :controller => "user", :action => "add_picture" }, :html => { :multipart => true } do |form| %>
+			  <%= form.file_field :photo %></br>
+			  <p align = "right"><%= form.submit "Upload"%></p>
+			<% end %>
+		</td>
+	</tr>
+</table>
+<%= render :partial => "user/show_pic" %>

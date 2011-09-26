@@ -1,0 +1,33 @@
+<table align = "center", border = 1px, width = 500px >
+	<tr>
+		<td>
+			<h2 align = "center">Please enter your details: </h2>
+			<table align = "center" >
+				<%= form_for :user, :url => {:controller => "user", :action => "try_create" },
+					 :html => { :multipart => true } do |f| %>		 	
+				<tr>
+					<td><%= f.label :first_name %></td>
+			  		<td><%= f.text_field :first_name %></td>
+			  	</tr>
+			  	
+			  	<tr>
+					<td><%= f.label :last_name %></td>
+			  		<td><%= f.text_field :last_name %></td>
+			  	</tr>			  	
+			  	<tr>
+					<td><%= f.label :email %></td>
+			  		<td><%= f.email_field :email %></td>
+			  	</tr>
+			  	
+			  	<tr>
+					<td><%= f.label :password %></td>
+			  		<td><%= f.password_field :password %></td>
+			  	</tr>
+			  	<tr>
+			  		<td colspan = "2", align = "right"><%= f.submit %>	</td>
+			  	<tr>
+				<% end %>
+			</table>
+		</td>
+	</tr>
+</table>
